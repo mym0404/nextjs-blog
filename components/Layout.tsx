@@ -3,11 +3,15 @@ import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import React from "react";
 
 const name = 'MJStudio';
 export const siteTitle = 'MJStudio next.js sample website';
 
-export default function Layout({ children, home }) {
+type Props = React.PropsWithChildren<{
+  home?: boolean;
+}>; 
+export default function Layout({ children, home }: Props) {
   return (
     <div className={styles.container}>
       <Head>
